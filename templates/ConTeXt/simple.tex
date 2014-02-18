@@ -1,4 +1,104 @@
-\setuppapersize [letter]
+% !TEX TS-program = ConTeXt (LuaTeX)
+% !TEX encoding = UTF-8
+
+% mtxrun  --script context --synctec thisfile.tex
+
+\setuppapersize [letter][letter]
 \setuppagenumbering[location=bottom,middle]
+
+\setuplayout
+[width=fit,
+height=fit,
+rightmargin=1.5cm,
+leftmargin=1.5cm,
+leftmargindistance=0pt,
+rightmargindistance=0pt,
+topspace=1.8cm,
+header=0pt,
+footer=1.2cm,
+bottomspace=0.5cm,
+backspace=1.5cm,
+location=singlesided]
+% \showframe
+
+% headers and footers
+\setupfooter[style=\it]
+\setupfootertexts[\date]
+
+\setupbodyfont[12pt]            % default is 12pt
+
+\setupcolors[state=start]       % otherwise you get greyscale
+\definecolor[headingcolor][r=1,b=0.4]
+
+
+\setupinteraction[state=start,  % make hyperlinks active, etc.
+  title={},
+  subtitle={},
+  author={Pradeep Gowda},
+  keyword={}]
+
+% useful urls
+\useURL[author-email][mailto:pradeep@btbytes.com][][pradeep@btbytes.com]
+\useURL[website][http://www.btbytes.com][][Website]
+
+\setuphead[section,chapter,subject][color=headingcolor]
+\setuphead[section,subject][style={\ss\bfa},
+  before={\bigskip\bigskip}, after={}]
+\setuphead[chapter][style={\ss\bfd}]
+\setuphead[title][style={\ss\bfd},
+  before={\begingroup\setupbodyfont[14.4pt]},
+  after={\leftline{\ss\tfa A. U. Thor $\langle$\from[author-email]$\rangle$}
+         \bigskip\bigskip\endgroup}]
+
+\setupitemize[inbetween={}, style=bold]
+% set inter-paragraph spacing
+\setupwhitespace[medium]
+% comment the next line to not indent paragraphs
+\setupindenting[medium, yes]
+
 \starttext
+
+\title{Hello world}
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer massa
+ lorem, pharetra eu nisi at, molestie ornare enim. Donec ac nibh
+ convallis, lacinia tortor ut, dapibus orci. Nam eget diam adipiscing,
+ accumsan nibh id, commodo diam. Sed ornare risus feugiat auctor
+ facilisis. Donec lacinia leo orci, sit amet viverra elit fringilla
+ eu. Pellentesque a dictum quam. Nam malesuada at augue non
+ facilisis. Cras mollis convallis convallis. Duis condimentum dui
+ dui. Curabitur sed massa in est faucibus elementum placerat quis
+ enim. Suspendisse at lacus diam. Pellentesque habitant morbi tristique
+ senectus et netus et malesuada fames ac turpis egestas.
+
+
+Aliquam faucibus dapibus euismod. Fusce odio lectus, lacinia ac rhoncus
+vel, mattis ut elit. Pellentesque rhoncus, leo non lobortis fermentum,
+ante eros faucibus ligula, in viverra nisi erat eu diam. Proin commodo
+vestibulum augue at elementum. Nam in semper sapien. Curabitur eu nunc
+vitae diam consequat bibendum in vel nibh. Cum sociis natoque penatibus
+et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque
+sit amet sem id quam porta facilisis et commodo tellus. Maecenas
+tristique dignissim imperdiet. Pellentesque condimentum auctor cursus.
+
+
+Sed et ipsum sollicitudin, varius turpis ut, dapibus leo. Sed in erat
+justo. Cras eleifend egestas nisi, in condimentum velit vestibulum
+ut. Mauris volutpat in est sed lacinia. Morbi felis mauris, volutpat a
+massa vel, hendrerit consequat neque. Nulla dui libero, faucibus ut
+lectus vitae, aliquam pulvinar eros. Integer vitae lacus nec lectus
+pulvinar lobortis. Praesent euismod metus eu tincidunt cursus. Quisque
+odio dui, hendrerit sed tempor sit amet, mollis ac enim.
+
+
+Cras non pretium dui. Nulla in leo vitae massa mattis adipiscing
+hendrerit sodales est. Suspendisse potenti. In hac habitasse platea
+dictumst. Nam iaculis mollis est eget condimentum. Etiam fringilla risus
+non libero venenatis consequat. Etiam suscipit velit ante, vel venenatis
+nulla ultrices a. Vivamus nec porttitor dui. Praesent iaculis tortor eu
+est sagittis, nec blandit turpis vestibulum. Praesent malesuada ligula
+vel ullamcorper iaculis. Sed mattis ut elit et consectetur. Quisque
+lacus tortor, tristique non tellus sit amet, fermentum pellentesque
+sapien.
+
 \stoptext
